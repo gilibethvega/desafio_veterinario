@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @pet_history.weight %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @pet_history.height %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @pet_history.status %>
+</p>
+
+<p>
+  <strong>Diagnosis:</strong>
+  <%= @pet_history.diagnosis %>
+</p>
+
+<%= link_to 'Edit', edit_pet_history_path(@pet_history) %> |
+<%= link_to 'Back', pet_histories_path %>

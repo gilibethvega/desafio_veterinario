@@ -13,6 +13,7 @@ class PetHistoriesController < ApplicationController
   # GET /pet_histories/new
   def new
     @pet_history = PetHistory.new
+    @pets = Pet.all
   end
 
   # GET /pet_histories/1/edit
@@ -64,6 +65,6 @@ class PetHistoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_history_params
-      params.require(:pet_history).permit(:weight, :height, :status, :diagnosis)
+      params.require(:pet_history).permit(:weight, :height, :status, :diagnosis, :pet_id)
     end
 end

@@ -1,22 +1,38 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @pet.name %>
 </p>
 
 <p>
-  <strong>Breed:</strong>
+  <strong>Raza:</strong>
   <%= @pet.breed %>
 </p>
 
 <p>
-  <strong>Date birthday:</strong>
+  <strong>Fecha de nacimiento:</strong>
   <%= @pet.date_birthday %>
 </p>
 <p>
   <strong>Historial:</strong>
   <%= @pet.history_pet %>
+</p>
+<p>
+  <strong>Peso promedio:</strong>
+  <%= @pet.average_weight %>
+</p>
+<p>
+  <strong>Altura promedio:</strong>
+  <%= @pet.average_height %>
+</p>
+<p>
+  <strong>Peso Máximo</strong>
+  <%= @pet.max_weight %>
+</p>
+<p>
+  <strong>Altura Máxima</strong>
+  <%= @pet.max_weight %>
 </p>
 
 <%= link_to 'Edit', edit_pet_path(@pet) %> |

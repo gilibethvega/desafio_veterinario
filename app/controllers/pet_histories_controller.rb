@@ -18,10 +18,12 @@ class PetHistoriesController < ApplicationController
 
   # GET /pet_histories/1/edit
   def edit
+    @pets = Pet.all
   end
 
   # POST /pet_histories or /pet_histories.json
   def create
+    @pets = Pet.all
     @pet_history = PetHistory.new(pet_history_params)
 
     respond_to do |format|

@@ -32,8 +32,13 @@
 </p>
 <p>
   <strong>Altura Máxima</strong>
-  <%= @pet.max_weight %>
+  <%= @pet.max_height %>
 </p>
+<p>
+  <strong>Dueño:</strong>
+  <%= @pet.client_name %>
+</p>
+
 
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>

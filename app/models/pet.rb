@@ -1,8 +1,18 @@
 class Pet < ApplicationRecord
   has_many :pet_histories, dependent: :destroy
+  belongs_to :client
+  
+  validates :name, presence: true
+  validates :breed, presence: true
+  validates :date_birthday, presence: true
 
+  
   def to_s
     name
+  end
+
+  def client_name
+    self.client.name
   end
 
   def number_visits
@@ -28,12 +38,20 @@ class Pet < ApplicationRecord
   def average_weight
     @weight = PetHistory.references(:pets).where(pet_id: id).pluck(:weight)
     n = @weight.count
-    ((@weight.map { |w| w }.sum)/n).round(2)
+    if n == 0
+      "No existen datos"
+    else
+      ((@weight.map { |w| w }.sum)/n).round(2)
+    end
   end
   def average_height
     @height = PetHistory.references(:pets).where(pet_id: id).pluck(:height)
     n = @height.count
-    ((@height.map { |h| h }.sum)/n).round(2)
+    if n == 0
+      "No existen datos"
+    else
+      ((@height.map { |h| h }.sum)/n).round(2)
+    end
   end
   def max_weight
     @weight.map { |w| w }.max

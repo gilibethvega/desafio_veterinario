@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Mascota</th>
       <th>Weight</th>
       <th>Height</th>
       <th>Status</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @pet_histories.each do |pet_history| %>
       <tr>
+        <td><%= pet_history.get_pet_name %></td>
         <td><%= pet_history.weight %></td>
         <td><%= pet_history.height %></td>
         <td><%= pet_history.status %></td>

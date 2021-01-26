@@ -13,14 +13,18 @@ class PetsController < ApplicationController
   # GET /pets/new
   def new
     @pet = Pet.new
+    @clients = Client.all
+
   end
 
   # GET /pets/1/edit
   def edit
+    @clients = Client.all
   end
 
   # POST /pets or /pets.json
   def create
+    @clients = Client.all
     @pet = Pet.new(pet_params)
 
     respond_to do |format|
@@ -64,6 +68,6 @@ class PetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_params
-      params.require(:pet).permit(:name, :breed, :date_birthday)
+      params.require(:pet).permit(:name, :breed, :date_birthday, :client_id)
     end
 end

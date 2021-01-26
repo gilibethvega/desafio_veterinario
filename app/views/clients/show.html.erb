@@ -15,5 +15,26 @@
   <%= @client.telephone %>
 </p>
 
+<table class="shadow-lg table mt-3">
+        <thead class="thead-dark text-center">
+          <tr>
+            <th>Mascota</th>
+            <th>Peso máximo</th>
+            <th>Altura máxima</th>
+          </tr>
+        </thead>
+
+        <tbody class="text-center">
+          <% @client.pets.each do |pet|%>
+            <tr>
+              <td><%= pet.name %></td>
+              <td><%= pet.max_weight %></td>
+              <td><%= pet.max_height %></td>              
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>

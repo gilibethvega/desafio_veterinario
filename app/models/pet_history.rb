@@ -4,6 +4,7 @@ class PetHistory < ApplicationRecord
   validates :height, presence: true
   validates :status, presence: true
   validates :diagnosis, presence: true
+  validates :pet_id, presence: true
 
   enum status: [:in_treatment, :healthy]
   def get_pet_name

@@ -5,7 +5,6 @@ class Pet < ApplicationRecord
   validates :name, presence: true
   validates :breed, presence: true
   validates :date_birthday, presence: true
-
   
   def to_s
     name
@@ -54,10 +53,10 @@ class Pet < ApplicationRecord
     end
   end
   def max_weight
-    @weight.map { |w| w }.max
+    PetHistory.references(:pets).where(pet_id: id).pluck(:weight).map { |w| w }.max
   end
   def max_height
-    @height.map { |h| h }.max
+    PetHistory.references(:pets).where(pet_id: id).pluck(:height).map { |h| h }.max
   end
 end
 
